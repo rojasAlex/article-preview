@@ -1,0 +1,295 @@
+:root{
+    --VeryDarkGrayishBlue: hsl(217, 19%, 35%);
+    --DesaturatedDarkBlue: hsl(214, 17%, 51%);
+    --GrayishBlue: hsl(212, 23%, 69%);
+    --LightGrayishBlue: hsl(210, 46%, 95%);
+    --grid-min: 38ch;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 1rem;
+
+}
+
+
+
+body{
+   
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--LightGrayishBlue);
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    
+  
+    
+ 
+    
+
+}
+ main{
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 38ch);
+  place-content: center;
+ 
+ }
+
+.card{
+    box-shadow: 0 2px 5px rgba(black, 0.45);
+    border-radius: 8px;
+    background-color: #fff;
+    /* overflow: hidden; */
+    position: relative;
+    display: grid;
+    grid-gap: 2rem;
+    place-items: center;
+    grid-template-rows: auto 1fr;
+    
+}
+
+.body-card{
+    display: grid;
+    grid-gap: 1rem;
+    padding: 0 2rem;
+    
+}
+
+.author{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+   
+}
+
+.author-description{
+    display: flex;
+    align-items: center;
+    
+}
+
+.author-description img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: inline-flex;
+    margin-right: 1rem;
+    transform: translateY(-0.25em);
+    
+
+}
+.author-text{
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+}
+
+.author-name{
+   
+    font-weight: 700;
+    color: var(--VeryDarkGrayishBlue)
+}
+
+.author-fech{
+ 
+  font-weight: 500;
+  color: var(--GrayishBlue);
+}
+
+
+.share-container{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    align-self: start;
+    transform: translateY(-0.5rem);
+  
+    
+}
+
+.btn-share{
+   border-radius: 50%;
+   background-color: var(--LightGrayishBlue);
+   padding: 12px;
+   position: absolute;
+   z-index: 1;
+   right: 2rem;
+   transform: translateY(1rem);
+}
+
+
+
+.r-social{
+  
+    background-color: var(--VeryDarkGrayishBlue);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding:  0 2rem;
+    height: 75px; 
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;  
+    transition:  380ms all ease-in-out;
+    border-radius: 0 0 8px 8px;
+  
+    
+
+    
+    
+}
+
+.text-share{
+    color: var(--DesaturatedDarkBlue);
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-right: 0.5em;
+    font-size: 14px;
+}
+
+.icon-s{
+    margin: 0 0.5rem;
+}
+
+.active{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+.hide{
+    display: none;
+}
+
+article > img{
+    width: 100%;
+    height: 38vh;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+
+   
+  
+}
+
+h4{
+    color: var(--VeryDarkGrayishBlue);
+    line-height: 1.5;
+}
+
+p{
+   
+    color: var(--GrayishBlue);
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+@media(min-width: 768px){
+    
+ 
+    main{
+        grid-template-columns: repeat(auto-fit, 66ch);
+        
+    }
+
+    .card{
+        grid-template-columns: repeat(2, 33.33% 63.33%);
+        gap: 0 2rem;
+        position: static;
+      
+        
+    }
+
+    .body-card{
+        padding: 2rem 3rem 0 0;
+    }
+
+    .share-container{
+        position: relative;
+        border: 1px solid red;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(0.5rem);
+        
+        
+    }
+
+    .btn-share{
+        position: relative;
+        right: 0;
+        transform: translateY(0);
+      
+    }
+
+
+    .r-social{
+        width: 230px;
+        height: 45px;
+        border-radius: 8px;
+        justify-content: space-around;
+        box-shadow: 3px 3px 20px gray;
+        position: absolute;
+        transform: translate(-5%, -4rem);
+        
+            
+         
+    }
+
+
+
+    .r-social::after{
+        content: "";
+        border: 0.5em solid transparent;
+        border-top-color: var(--VeryDarkGrayishBlue);
+        position: absolute;
+        left: 50%;
+        top: 100%;
+      
+        
+    }
+
+    article > img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px 0 0 8px;
+       
+       
+      
+    }
+
+}
+
+@media(min-width: 860px){
+
+    main{
+        grid-template-columns: repeat(auto-fit, 100ch);
+    }
+
+    .body-card{
+       padding: 0 2rem 0 0;
+       margin-top: 2rem;
+     
+    }
+    .author{
+        margin-top: 1rem;
+    }
+
+    p{
+        margin-top: 1rem;
+        line-height: 1.8;
+    }
+    
+}
+
+
